@@ -1,23 +1,4 @@
-const SHA256 = require('crypto-js/sha256')
-
-class Block {
-  constructor(timestamp, data) {
-    this.index = 0
-    this.timestamp = timestamp
-    this.data = data
-    this.previousHash = "0"
-    this.hash = this.calculateHash()
-    this.nonce = 0
-  }
-
-  calculateHash() {
-    return SHA256(this.index + this.previousHash + this.timestamp + this.data + this.nonce).toString()
-  }
-
-  mineBlock(difficulty) {
-
-  }
-}
+import Block from './Block'
 
 class Blockchain {
   constructor() {
@@ -57,9 +38,4 @@ class Blockchain {
   }
 }
 
-let alfChain = new Blockchain()
-alfChain.addBlock(new Block("02/01/2019", {message: "This is a mad ting!"}))
-alfChain.addBlock(new Block("03/01/2019", {message: "I'm another block!"}))
-
-console.log(JSON.stringify(alfChain, null, 4))
-console.log("Is Blockchain valid? " + alfChain.checkValid())
+export default Blockchain
