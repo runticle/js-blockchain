@@ -3,10 +3,11 @@ import Block from './Block'
 class Blockchain {
   constructor() {
     this.chain = [this.createGenesis()]
+    this.nextBlockIndex = 1
   }
 
   createGenesis() {
-    return new Block(0, "01/01/2019", "My first Blockchain!", "0")
+    return new Block(0, Date.now(), "My first Blockchain!")
   }
 
   latestBlock() {
@@ -17,6 +18,7 @@ class Blockchain {
     newBlock.previousHash = this.latestBlock().hash
     newBlock.hash = newBlock.calculateHash()
     this.chain.push(newBlock)
+    this.nextBlockIndex ++
   }
 
   checkValid() {

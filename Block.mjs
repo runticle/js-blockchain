@@ -1,8 +1,8 @@
 import SHA256 from 'crypto-js/sha256'
 
 class Block {
-  constructor(timestamp, data) {
-    this.index = 0
+  constructor(index, timestamp, data) {
+    this.index = index
     this.timestamp = timestamp
     this.data = data
     this.previousHash = "0"
