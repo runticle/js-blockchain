@@ -1,11 +1,14 @@
-A Blockchain example!
+## Quickstart 
 
-Followed part 1 of a tutorial on medium. 
+Set up at least one node, defining PORT number as you do
 
-Plan to extend as there is no part 2 written yet.
+```
+PORT=5000 yarn start
+PORT=5001 yarn start
+```
 
-Features to add 
+Open up Postman or equivalent and use to send requests to a node <br>
+```GET /blockchain``` returns blockchain <br>
+```POST /mine``` mines block (you can set difficulty in the Blockchain class) <br>
+```POST /transactions``` adds a transaction to the next block
 
-- mineBlock function 
-- add security layer
-- visual representation 
